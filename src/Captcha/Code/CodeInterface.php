@@ -1,6 +1,6 @@
 <?php
 
-namespace Igoshev\Captcha\Captcha\Code;
+namespace Parsidev\Captcha\Captcha\Code;
 
 interface CodeInterface
 {

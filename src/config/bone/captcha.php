@@ -45,7 +45,7 @@ return [
     | Must implement GeneratorInterface.
     |
     */
-    'generator' => \Igoshev\Captcha\Captcha\Generator\GeneratorWaves::class,
+    'generator' => \Parsidev\Captcha\Captcha\Generator\GeneratorWaves::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     | Must implement StorageInterface.
     |
     */
-    'storage' => \Igoshev\Captcha\Captcha\Storage\SessionStorage::class,
+    'storage' => \Parsidev\Captcha\Captcha\Storage\SessionStorage::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ return [
     | Must implement CodeInterface.
     |
     */
-    'code' => \Igoshev\Captcha\Captcha\Code\SimpleCode::class,
+    'code' => \Parsidev\Captcha\Captcha\Code\SimpleCode::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -72,7 +72,7 @@ return [
     | Supported: "IndiraK".
     |
     */
-    'font' => base_path('vendor/bonecms/laravel-captcha/src/resources/fonts/IndiraK.ttf'),
+    'font' => base_path('vendor/parsidev/laravel-captcha/src/resources/fonts/IndiraK.ttf'),
 
     /*
     |--------------------------------------------------------------------------

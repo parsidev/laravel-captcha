@@ -1,9 +1,9 @@
 <?php
 
-namespace Igoshev\Captcha\Controllers;
+namespace Parsidev\Captcha\Controllers;
 
 use Illuminate\Routing\Controller as Controller;
-use Igoshev\Captcha\Facades\Captcha;
+use Parsidev\Captcha\Facades\Captcha;
 
 class CaptchaController extends Controller
 {

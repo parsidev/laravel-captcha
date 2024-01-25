@@ -25,19 +25,13 @@ Note: If you do not have Composer yet, you can install it by following the instr
 composer require bonecms/laravel-captcha
 ```
 
-| Captcha | Laravel |
-|---|---|
-| [v2.2](https://github.com/igoshev/laravel-captcha/tree/2.2)  | 5.5 - 9.x |
-| [v2.1](https://github.com/igoshev/laravel-captcha/tree/2.1) | 5.4  |
-| [v1.1](https://github.com/igoshev/laravel-captcha/tree/1.1) | 5.3 and below |
-
 
 #### Step 2 for Laravel 5.5 and below. Register the Laravel Captcha service provider
 {LARAVEL_ROOT}/config/app.php:
 ```php
 'providers' => [
     ...
-    Igoshev\Captcha\Providers\CaptchaServiceProvider::class,
+    Parsidev\Captcha\Providers\CaptchaServiceProvider::class,
 ],
 ```
 
@@ -144,7 +138,7 @@ return [
     | Must implement GeneratorInterface.
     |
     */
-    'generator' => \Igoshev\Captcha\Captcha\Generator\GeneratorWaves::class,
+    'generator' => \Parsidev\Captcha\Captcha\Generator\GeneratorWaves::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -153,7 +147,7 @@ return [
     | Must implement StorageInterface.
     |
     */
-    'storage' => \Igoshev\Captcha\Captcha\Storage\SessionStorage::class,
+    'storage' => \Parsidev\Captcha\Captcha\Storage\SessionStorage::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -162,7 +156,7 @@ return [
     | Must implement CodeInterface.
     |
     */
-    'code' => \Igoshev\Captcha\Captcha\Code\SimpleCode::class,
+    'code' => \Parsidev\Captcha\Captcha\Code\SimpleCode::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -286,8 +280,3 @@ php artisan vendor:publish --tag=bone-captcha-lang
 ```bash
 php artisan vendor:publish --tag=bone-captcha-views
 ```
-
-## Donation
-If this project help you reduce time to develop, you can give me a cup of coffee :)
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/dmigoshev)

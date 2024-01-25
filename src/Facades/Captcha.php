@@ -1,6 +1,6 @@
 <?php
 
-namespace Igoshev\Captcha\Facades;
+namespace Parsidev\Captcha\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -13,6 +13,6 @@ class Captcha extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Igoshev\Captcha\Captcha\Captcha::class;
+        return \Parsidev\Captcha\Captcha\Captcha::class;
     }
 }

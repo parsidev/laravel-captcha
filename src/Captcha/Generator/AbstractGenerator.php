@@ -1,6 +1,6 @@
 <?php
 
-namespace Igoshev\Captcha\Captcha\Generator;
+namespace Parsidev\Captcha\Captcha\Generator;
 
 abstract class AbstractGenerator
 {

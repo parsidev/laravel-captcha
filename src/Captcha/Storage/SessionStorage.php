@@ -1,6 +1,6 @@
 <?php
 
-namespace Igoshev\Captcha\Captcha\Storage;
+namespace Parsidev\Captcha\Captcha\Storage;
 
 use Illuminate\Http\Request;
 

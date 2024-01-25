@@ -1,12 +1,12 @@
 <?php
 
-namespace Igoshev\Captcha\Providers;
+namespace Parsidev\Captcha\Providers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
-use Igoshev\Captcha\Captcha\Captcha;
+use Parsidev\Captcha\Captcha\Captcha;
 
 class CaptchaServiceProvider extends ServiceProvider
 {
@@ -60,7 +60,7 @@ class CaptchaServiceProvider extends ServiceProvider
         }
 
         Blade::directive(config('bone.captcha.blade'), static function () {
-            return '<?php echo Igoshev\Captcha\Facades\Captcha::getView() ?>';
+            return '<?php echo Parsidev\Captcha\Facades\Captcha::getView() ?>';
         });
     }
 
@@ -71,7 +71,7 @@ class CaptchaServiceProvider extends ServiceProvider
     {
         $this->app['router']->group([
             'middleware' => config('bone.captcha.middleware', 'web'),
-            'namespace'  => 'Igoshev\Captcha\Controllers',
+            'namespace'  => 'Parsidev\Captcha\Controllers',
             'as'         => 'bone.captcha.'
         ], static function ($router) {
             $router->get(config('bone.captcha.routes.image'), 'CaptchaController@image')->name('image');
