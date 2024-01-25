@@ -1,10 +1,10 @@
 <?php
 
-namespace Igoshev\Captcha\Captcha;
+namespace Parsidev\Captcha\Captcha;
 
-use Igoshev\Captcha\Captcha\Storage\StorageInterface;
-use Igoshev\Captcha\Captcha\Generator\GeneratorInterface;
-use Igoshev\Captcha\Captcha\Code\CodeInterface;
+use Parsidev\Captcha\Captcha\Storage\StorageInterface;
+use Parsidev\Captcha\Captcha\Generator\GeneratorInterface;
+use Parsidev\Captcha\Captcha\Code\CodeInterface;
 
 class Captcha
 {
