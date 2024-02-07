@@ -17,13 +17,13 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/bone/captcha.php', 'bone.captcha');
-        $this->loadViewsFrom(__DIR__ . '/../resources/views/vendor/bone', 'bone');
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang/vendor/bone', 'bone');
+        $this->mergeConfigFrom(__DIR__ . '/../config/parsidev/captcha.php', 'parsidev.captcha');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/vendor/parsidev', 'parsidev');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang/vendor/parsidev', 'parsidev');
 
-        $this->publishes([__DIR__ . '/../config' => config_path()], 'bone-captcha-config');
-        $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'bone-captcha-lang');
-        $this->publishes([__DIR__ . '/../resources/views' => resource_path('views')], 'bone-captcha-views');
+        $this->publishes([__DIR__ . '/../config' => config_path()], 'parsidev-captcha-config');
+        $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'parsidev-captcha-lang');
+        $this->publishes([__DIR__ . '/../resources/views' => resource_path('views')], 'parsidev-captcha-views');
 
         $this->registerRoutes();
         $this->registerBladeDirectives();
@@ -38,7 +38,7 @@ class CaptchaServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Captcha::class, static function (Application $app) {
-            $config = $app['config']['bone']['captcha'];
+            $config = $app['config']['parsidev']['captcha'];
 
             $storage   = $app->make($config['storage']);
             $generator = $app->make($config['generator']);
@@ -59,7 +59,7 @@ class CaptchaServiceProvider extends ServiceProvider
             return;
         }
 
-        Blade::directive(config('bone.captcha.blade'), static function () {
+        Blade::directive(config('parsidev.captcha.blade'), static function () {
             return '<?php echo Parsidev\Captcha\Facades\Captcha::getView() ?>';
         });
     }
@@ -70,12 +70,12 @@ class CaptchaServiceProvider extends ServiceProvider
     protected function registerRoutes()
     {
         $this->app['router']->group([
-            'middleware' => config('bone.captcha.middleware', 'web'),
+            'middleware' => config('parsidev.captcha.middleware', 'web'),
             'namespace'  => 'Parsidev\Captcha\Controllers',
-            'as'         => 'bone.captcha.'
+            'as'         => 'parsidev.captcha.'
         ], static function ($router) {
-            $router->get(config('bone.captcha.routes.image'), 'CaptchaController@image')->name('image');
-            $router->get(config('bone.captcha.routes.image_tag'), 'CaptchaController@imageTag')->name('image.tag');
+            $router->get(config('parsidev.captcha.routes.image'), 'CaptchaController@image')->name('image');
+            $router->get(config('parsidev.captcha.routes.image_tag'), 'CaptchaController@imageTag')->name('image.tag');
         });
     }
 
@@ -84,8 +84,8 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function registerValidator()
     {
-        Validator::extend(config('bone.captcha.validator'), function ($attribute, $value, $parameters, $validator) {
+        Validator::extend(config('parsidev.captcha.validator'), function ($attribute, $value, $parameters, $validator) {
             return $this->app[Captcha::class]->validate($value);
-        }, trans('bone::captcha.incorrect_code'));
+        }, trans('parsidev::captcha.incorrect_code'));
     }
 }
