@@ -104,18 +104,18 @@ class Captcha
      */
     public function getView()
     {
-        $route = route('bone.captcha.image', [], false);
+        $route = route('parsidev.captcha.image', [], false);
         if (mb_strpos(config('app.url'), 'https://') !== false) {
             $route = secure_url($route);
         }
         $route .= '?_=' . mt_rand();
 
-        return view('bone::captcha.image', [
+        return view('parsidev::captcha.image', [
             'route'    => $route,
-            'title'    => trans('bone::captcha.update_code'),
-            'width'    => config('bone.captcha.width'),
-            'height'   => config('bone.captcha.height'),
-            'input_id' => config('bone.captcha.inputId'),
+            'title'    => trans('parsidev::captcha.update_code'),
+            'width'    => config('parsidev.captcha.width'),
+            'height'   => config('parsidev.captcha.height'),
+            'input_id' => config('parsidev.captcha.inputId'),
         ]);
     }
 
