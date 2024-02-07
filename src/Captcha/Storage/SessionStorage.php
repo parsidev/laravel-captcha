@@ -14,7 +14,7 @@ class SessionStorage implements StorageInterface
     /**
      * @var string
      */
-    private $key = 'bone_captcha';
+    private $key = 'parsidev_captcha';
 
     /**
      * SessionStorage constructor.
