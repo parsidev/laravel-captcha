@@ -88,7 +88,7 @@ class MyController extends Controller
 ```
 ### Configuration
 ```bash
-php artisan vendor:publish --tag=bone-captcha-config
+php artisan vendor:publish --tag=parsidev-captcha-config
 ```
 ```php
 <?php
@@ -273,10 +273,10 @@ Supported languages (17):
 * Turkish
 * Ukrainian
 ```bash
-php artisan vendor:publish --tag=bone-captcha-lang
+php artisan vendor:publish --tag=parsidev-captcha-lang
 ```
 
 ### View
 ```bash
-php artisan vendor:publish --tag=bone-captcha-views
+php artisan vendor:publish --tag=parsidev-captcha-views
 ```
